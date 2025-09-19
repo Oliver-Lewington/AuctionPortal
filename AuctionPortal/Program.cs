@@ -1,10 +1,19 @@
 using AuctionPortal.Components;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+var conn = builder.Configuration.GetConnectionString("DefaultConnection")
+?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+
+Console.WriteLine("Hello World " + conn);
+
+//builder.Services.AddDbContext<AuctionDbContext>(options =>
+//    options.UseNpgsql(conn));
 
 var app = builder.Build();
 
