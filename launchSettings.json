@@ -3,8 +3,12 @@
     "Docker Compose": {
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "auction-portal",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",
       "serviceActions": {
-        "auctionportal": "StartDebugging"
+        "auction_portal_postgres": "StartWithoutDebugging",
+        "auction-portal": "StartDebugging"
       }
     }
   }
