@@ -1,0 +1,6 @@
+services:
+  auctionportal:
+    image: ${DOCKER_REGISTRY-}auctionportal
+    build:
+      context: .
+      dockerfile: AuctionPortal/Dockerfile
